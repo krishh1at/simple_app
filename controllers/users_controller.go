@@ -1,8 +1,8 @@
 package controllers
 
 import (
-	"fullstack/simple_app/config"
-	"fullstack/simple_app/models"
+	"github.com/krishh1at/simple_app/config"
+	"github.com/krishh1at/simple_app/models"
 
 	"github.com/gin-gonic/gin"
 

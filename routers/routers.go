@@ -1,7 +1,7 @@
 package routers
 
 import (
-	"fullstack/simple_app/controllers"
+	"github.com/krishh1at/simple_app/controllers"
 
 	"github.com/gin-gonic/gin"
 )

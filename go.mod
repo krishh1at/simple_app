@@ -1,4 +1,4 @@
-module fullstack/simple_app
+module github.com/krishh1at/simple_app
 
 go 1.15
 

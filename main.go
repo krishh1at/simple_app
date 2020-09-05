@@ -2,9 +2,10 @@ package main
 
 import (
 	"fmt"
-	"fullstack/simple_app/config"
-	"fullstack/simple_app/models"
-	"fullstack/simple_app/routers"
+
+	"github.com/krishh1at/simple_app/config"
+	"github.com/krishh1at/simple_app/models"
+	"github.com/krishh1at/simple_app/routers"
 
 	"github.com/gin-gonic/gin"
 	"gorm.io/driver/mysql"
