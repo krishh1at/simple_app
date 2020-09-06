@@ -1,4 +1,4 @@
-package controllers
+package api
 
 import (
 	"net/http"
@@ -10,10 +10,16 @@ import (
 
 // IndexPosts for rendering all posts
 func IndexPosts(c *gin.Context) {
+	user, err := user(c)
+
+	if err != nil {
+		return
+	}
+
 	var posts []models.Post
 
-	if err := config.DB.Find(&posts).Error; err != nil {
-		c.JSON(http.StatusNotFound, err.Error())
+	if err := config.DB.Where("user_id = ?", user.ID).Find(&posts).Error; err != nil {
+		c.JSON(http.StatusBadRequest, err.Error())
 	} else {
 		c.JSON(http.StatusOK, posts)
 	}
@@ -21,21 +27,22 @@ func IndexPosts(c *gin.Context) {
 
 // ShowPost is to find post of given id
 func ShowPost(c *gin.Context) {
-	var post models.Post
+	post, err := findPost(c)
 
-	id := c.Param("id")
-
-	if err := config.DB.First(&post, id).Error; err != nil {
-		c.JSON(http.StatusNotFound, err.Error())
-	} else {
+	if err == nil {
 		c.JSON(http.StatusOK, post)
 	}
 }
 
 // CreatePost to create new post
 func CreatePost(c *gin.Context) {
-	var post models.Post
+	user, err := user(c)
 
+	if err != nil {
+		return
+	}
+
+	post := models.Post{UserID: &user.ID}
 	c.BindJSON(&post)
 
 	if err := config.DB.Create(&post).Error; err != nil {
@@ -47,12 +54,9 @@ func CreatePost(c *gin.Context) {
 
 // UpdatePost to update post of given id
 func UpdatePost(c *gin.Context) {
-	var post models.Post
+	post, err := findPost(c)
 
-	id := c.Param("id")
-
-	if err := config.DB.First(&post, id).Error; err != nil {
-		c.JSON(http.StatusNotFound, err.Error())
+	if err != nil {
 		return
 	}
 
@@ -67,11 +71,10 @@ func UpdatePost(c *gin.Context) {
 
 // DeletePost to delete post of given id
 func DeletePost(c *gin.Context) {
-	var post models.Post
-	id := c.Param("id")
+	post, err := findPost(c)
 
-	if err := config.DB.First(&post, id).Error; err != nil {
-		c.JSON(http.StatusNotFound, err.Error())
+	if err != nil {
+		return
 	}
 
 	if err := config.DB.Delete(&post).Error; err != nil {
@@ -79,4 +82,36 @@ func DeletePost(c *gin.Context) {
 	} else {
 		c.JSON(http.StatusOK, gin.H{"success": "post has been deleted successfully!"})
 	}
+}
+
+// private functions
+func user(c *gin.Context) (*models.User, error) {
+	var (
+		user models.User
+		err  error
+	)
+
+	userID := c.Param("user_id")
+
+	if err = config.DB.First(&user, userID).Error; err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"user": err.Error()})
+	}
+
+	return &user, err
+}
+
+func findPost(c *gin.Context) (*models.Post, error) {
+	user, err := user(c)
+	var post models.Post
+
+	if err == nil {
+		post = models.Post{UserID: &user.ID}
+		id := c.Param("id")
+
+		if err = config.DB.First(&post, id).Error; err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{"post": err.Error()})
+		}
+	}
+
+	return &post, err
 }

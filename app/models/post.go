@@ -1,8 +1,6 @@
 package models
 
-import (
-	"database/sql"
-)
+import "time"
 
 // Post is type of model to capture all database info related to post
 // ID          uint64    `json:"id"`
@@ -12,10 +10,12 @@ import (
 // Updated_at  time.Time `json:"updatedAt"`
 // User        belongs_to association
 type Post struct {
-	ID     uint64         `gorm:"primaryKey"`
-	Title  string         `json:"title"`
-	Body   sql.NullString `json:"body"`
-	UserID uint64
+	UserID    *uint64 `gorm:"not null"`
+	ID        uint64  `gorm:"primaryKey"`
+	Title     string
+	Body      string
+	CreatedAt time.Time
+	UpdatedAt time.Time
 }
 
 // TableName this method return table name

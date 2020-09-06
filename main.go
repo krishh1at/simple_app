@@ -10,8 +10,9 @@ import (
 
 func main() {
 	db.Migration()
+
 	gin.ForceConsoleColor()
 	router := gin.Default()
 	routes.InitRouter(router)
-	router.Run(":8080")
+	router.Run(":3000")
 }
