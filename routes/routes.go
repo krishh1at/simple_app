@@ -5,6 +5,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/krishh1at/simple_app/app/controllers"
 	"github.com/krishh1at/simple_app/app/controllers/api"
+	"github.com/krishh1at/simple_app/app/paths"
 )
 
 // InitRouter is used to setup router
@@ -36,12 +37,15 @@ func InitRouter(router *gin.Engine) {
 		Extension:    ".html",
 		Master:       "layouts/application",
 		Partials:     []string{"users/form"},
+		Funcs:        paths.Path,
 		DisableCache: true,
 	})
 
+	router.GET("/users", controllers.IndexUsers)
 	router.GET("/users/:id", controllers.ShowUser)
 	router.GET("/user/new", controllers.NewUser)
 	router.POST("/users", controllers.CreateUser)
 	router.GET("/users/:id/edit", controllers.EditUser)
 	router.PUT("/users", controllers.UpdateUser)
+	router.GET("/users/:id/delete", controllers.DeleteUser)
 }

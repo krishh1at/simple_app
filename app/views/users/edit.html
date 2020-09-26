@@ -1,5 +1,9 @@
 {{define "content"}}
-    <form method="put" action="/users/{{.user.ID}}">
+    <div class="section-title">
+        <h2>{{.title}}</h2>
+    </div>
+
+    <form method="put" action="{{UserPath .user}}">
         {{template "form" .}}
     </form>
 {{end}}

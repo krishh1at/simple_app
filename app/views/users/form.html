@@ -6,7 +6,7 @@
             class="form-control"
             id="user_name"
             name="user[Name]"
-            value="{{call .stringify .user.Name}}"
+            value="{{string .user.Name}}"
             placeholder="Enter Name"
         >
     </div>
@@ -18,7 +18,7 @@
             class="form-control"
             id="user_email"
             name="user[Email]"
-            value="{{call .stringify .user.Email}}"
+            value="{{string .user.Email}}"
             placeholder="Enter Email"
         >
     </div>
@@ -30,7 +30,7 @@
             class="form-control"
             id="user_phoneNumber"
             name="user[PhoneNumber]"
-            value="{{call .stringify .user.PhoneNumber}}"
+            value="{{string .user.PhoneNumber}}"
             placeholder="Enter PhoneNumber"
         >
     </div>
@@ -42,7 +42,7 @@
             class="form-control"
             id="user_address"
             name="user[Address]"
-            value="{{call .stringify .user.Address}}"
+            value="{{string .user.Address}}"
             placeholder="Enter Address"
         >
     </div>

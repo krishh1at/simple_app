@@ -5,6 +5,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/krishh1at/simple_app/app/models"
+	"github.com/krishh1at/simple_app/app/paths"
 	"github.com/krishh1at/simple_app/config"
 )
 
@@ -15,7 +16,11 @@ func IndexUsers(c *gin.Context) {
 	if err := config.DB.Preload("Posts").Find(&users).Error; err != nil {
 		c.JSON(http.StatusBadRequest, err.Error())
 	} else {
-		c.JSON(http.StatusOK, users)
+		c.HTML(http.StatusOK, "users/index", gin.H{
+			"title":  "Users",
+			"action": "Index",
+			"users":  users,
+		})
 	}
 }
 
@@ -33,10 +38,9 @@ func NewUser(c *gin.Context) {
 	var user models.User
 
 	c.HTML(http.StatusOK, "users/new", gin.H{
-		"title":     "Create New User",
-		"action":    "Create",
-		"user":      user,
-		"stringify": Stringify,
+		"title":  "Create New User",
+		"action": "Create",
+		"user":   user,
 	})
 }
 
@@ -46,13 +50,12 @@ func CreateUser(c *gin.Context) {
 
 	if err := config.DB.Create(&user).Error; err != nil {
 		c.HTML(http.StatusOK, "users/new", gin.H{
-			"title":     "Create New User",
-			"action":    "Create",
-			"user":      user,
-			"stringify": Stringify,
+			"title":  "Create New User",
+			"action": "Create",
+			"user":   user,
 		})
 	} else {
-		c.Redirect(http.StatusMovedPermanently, user.UserPath())
+		c.Redirect(http.StatusMovedPermanently, paths.UserPath(&user))
 	}
 }
 
@@ -64,10 +67,9 @@ func EditUser(c *gin.Context) {
 		return
 	} else {
 		c.HTML(http.StatusOK, "users/edit", gin.H{
-			"title":     "Create New User",
-			"action":    "Create",
-			"user":      user,
-			"stringify": Stringify,
+			"title":  "Update User",
+			"action": "Update",
+			"user":   user,
 		})
 	}
 }
@@ -83,26 +85,30 @@ func UpdateUser(c *gin.Context) {
 	c.BindJSON(&user)
 
 	if err := config.DB.Save(&user).Error; err != nil {
-		c.JSON(http.StatusBadRequest, err.Error())
+		c.HTML(http.StatusOK, "users/edit", gin.H{
+			"title":  "Update User",
+			"action": "Update",
+			"user":   user,
+		})
 	} else {
-		c.JSON(http.StatusOK, user)
+		c.Redirect(http.StatusMovedPermanently, paths.UserPath(user))
 	}
 }
 
-// // DeleteUser for deleting user of given id
-// func DeleteUser(c *gin.Context) {
-// 	user, err := findUser(c)
+// DeleteUser for deleting user of given id
+func DeleteUser(c *gin.Context) {
+	user, err := findUser(c)
 
-// 	if err != nil {
-// 		return
-// 	}
+	if err != nil {
+		return
+	}
 
-// 	if err = config.DB.Delete(&user).Error; err != nil {
-// 		c.JSON(http.StatusInternalServerError, err.Error())
-// 	} else {
-// 		c.JSON(http.StatusOK, gin.H{"success": "user has been deleted successfully!"})
-// 	}
-// }
+	if err = config.DB.Delete(&user).Error; err != nil {
+		c.JSON(http.StatusInternalServerError, err.Error())
+	} else {
+		c.JSON(http.StatusOK, gin.H{"success": "user has been deleted successfully!"})
+	}
+}
 
 // private function
 func findUser(c *gin.Context) (*models.User, error) {
@@ -133,15 +139,4 @@ func userData(c *gin.Context) models.User {
 	}
 
 	return user
-}
-
-// Stringify to make string
-func Stringify(d interface{}) interface{} {
-	var a *string
-
-	if a == d {
-		return ""
-	}
-
-	return d
 }
