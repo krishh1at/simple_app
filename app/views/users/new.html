@@ -1,0 +1,9 @@
+{{define "content"}}
+    <div class="section-title">
+        <h2>Create New User</h2>
+    </div>
+
+    <form method="post" action="/users/">
+        {{template "form" .}}
+    </form>
+{{end}}

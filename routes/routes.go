@@ -1,6 +1,7 @@
 package routes
 
 import (
+	gintemplate "github.com/foolin/gin-template"
 	"github.com/gin-gonic/gin"
 	"github.com/krishh1at/simple_app/app/controllers"
 	"github.com/krishh1at/simple_app/app/controllers/api"
@@ -8,11 +9,8 @@ import (
 
 // InitRouter is used to setup router
 func InitRouter(router *gin.Engine) {
-	// images
-	router.StaticFile("/images/", "./app/assets/images/")
-
-	// favicon.ico
-	router.StaticFile("/favicon.ico", "./app/assets/images/favicon.ico")
+	// assets
+	router.Static("/assets/", "./app/assets/")
 
 	// home routes
 	router.GET("/", controllers.HomeIndex)
@@ -32,4 +30,18 @@ func InitRouter(router *gin.Engine) {
 	posts.POST("/posts", api.CreatePost)
 	posts.PUT("/posts/:id", api.UpdatePost)
 	posts.DELETE("/posts/:id", api.DeletePost)
+
+	router.HTMLRender = gintemplate.New(gintemplate.TemplateConfig{
+		Root:         "app/views",
+		Extension:    ".html",
+		Master:       "layouts/application",
+		Partials:     []string{"users/form"},
+		DisableCache: true,
+	})
+
+	router.GET("/users/:id", controllers.ShowUser)
+	router.GET("/user/new", controllers.NewUser)
+	router.POST("/users", controllers.CreateUser)
+	router.GET("/users/:id/edit", controllers.EditUser)
+	router.PUT("/users", controllers.UpdateUser)
 }

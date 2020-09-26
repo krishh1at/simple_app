@@ -3,6 +3,7 @@ module github.com/krishh1at/simple_app
 go 1.15
 
 require (
+	github.com/foolin/gin-template v0.0.0-20190415034731-41efedfb393b
 	github.com/gin-contrib/pprof v1.3.0
 	github.com/gin-gonic/gin v1.6.3
 	github.com/go-playground/validator/v10 v10.3.0 // indirect

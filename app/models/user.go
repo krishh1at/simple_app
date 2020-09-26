@@ -1,6 +1,7 @@
 package models
 
 import (
+	"fmt"
 	"time"
 
 	"gorm.io/gorm"
@@ -36,4 +37,9 @@ func (user *User) BeforeDelete(db *gorm.DB) (err error) {
 	err = db.Model(&Post{}).Where("user_id = ?", user.ID).Delete(&Post{}).Error
 
 	return err
+}
+
+// UserPath is path to their show page
+func (user *User) UserPath() string {
+	return fmt.Sprintf("/users/%v", user.ID)
 }
