@@ -3,9 +3,10 @@ package controllers
 import (
 	"net/http"
 
+	"github.com/gin-contrib/sessions"
 	"github.com/gin-gonic/gin"
+	"github.com/krishh1at/simple_app/app/helpers"
 	"github.com/krishh1at/simple_app/app/models"
-	"github.com/krishh1at/simple_app/app/paths"
 	"github.com/krishh1at/simple_app/config"
 )
 
@@ -16,11 +17,17 @@ func IndexUsers(c *gin.Context) {
 	if err := config.DB.Preload("Posts").Find(&users).Error; err != nil {
 		c.JSON(http.StatusBadRequest, err.Error())
 	} else {
+		session := sessions.Default(c)
+
 		c.HTML(http.StatusOK, "users/index", gin.H{
-			"title":  "Users",
-			"action": "Index",
-			"users":  users,
+			"title":       "Users",
+			"action":      "Index",
+			"users":       users,
+			"CurrentPath": c.Request.URL.Path,
+			"danger":      session.Flashes("danger"),
 		})
+
+		session.Clear()
 	}
 }
 
@@ -29,7 +36,12 @@ func ShowUser(c *gin.Context) {
 	user, err := findUser(c)
 
 	if err == nil {
-		c.JSON(http.StatusOK, user)
+		c.HTML(http.StatusOK, "users/show", gin.H{
+			"title":       "User",
+			"action":      "Show",
+			"user":        user,
+			"CurrentPath": c.Request.URL.Path,
+		})
 	}
 }
 
@@ -38,24 +50,27 @@ func NewUser(c *gin.Context) {
 	var user models.User
 
 	c.HTML(http.StatusOK, "users/new", gin.H{
-		"title":  "Create New User",
-		"action": "Create",
-		"user":   user,
+		"title":       "Create New User",
+		"action":      "Create",
+		"user":        user,
+		"CurrentPath": c.Request.URL.Path,
 	})
 }
 
 // CreateUser to create new user
 func CreateUser(c *gin.Context) {
-	user := userData(c)
+	var user *models.User
+	user = userData(c, user)
 
 	if err := config.DB.Create(&user).Error; err != nil {
 		c.HTML(http.StatusOK, "users/new", gin.H{
-			"title":  "Create New User",
-			"action": "Create",
-			"user":   user,
+			"title":       "Create New User",
+			"action":      "Create",
+			"user":        user,
+			"CurrentPath": c.Request.URL.Path,
 		})
 	} else {
-		c.Redirect(http.StatusMovedPermanently, paths.UserPath(&user))
+		c.Redirect(http.StatusMovedPermanently, helpers.UserPath(user))
 	}
 }
 
@@ -67,9 +82,10 @@ func EditUser(c *gin.Context) {
 		return
 	} else {
 		c.HTML(http.StatusOK, "users/edit", gin.H{
-			"title":  "Update User",
-			"action": "Update",
-			"user":   user,
+			"title":       "Update User",
+			"action":      "Update",
+			"user":        user,
+			"CurrentPath": c.Request.URL.Path,
 		})
 	}
 }
@@ -77,21 +93,21 @@ func EditUser(c *gin.Context) {
 // UpdateUser updated corresponding user
 func UpdateUser(c *gin.Context) {
 	user, err := findUser(c)
+	user = userData(c, user)
 
 	if err != nil {
 		return
 	}
 
-	c.BindJSON(&user)
-
-	if err := config.DB.Save(&user).Error; err != nil {
+	if err := config.DB.Save(user).Error; err != nil {
 		c.HTML(http.StatusOK, "users/edit", gin.H{
-			"title":  "Update User",
-			"action": "Update",
-			"user":   user,
+			"title":       "Update User",
+			"action":      "Update",
+			"user":        user,
+			"CurrentPath": c.Request.URL.Path,
 		})
 	} else {
-		c.Redirect(http.StatusMovedPermanently, paths.UserPath(user))
+		c.Redirect(http.StatusMovedPermanently, helpers.UserPath(user))
 	}
 }
 
@@ -103,10 +119,15 @@ func DeleteUser(c *gin.Context) {
 		return
 	}
 
+	session := sessions.Default(c)
+	session.Options(sessions.Options{MaxAge: 5})
+	session.AddFlash("User has been deleted successfully!", "danger")
+	session.Save()
+
 	if err = config.DB.Delete(&user).Error; err != nil {
-		c.JSON(http.StatusInternalServerError, err.Error())
+		c.Redirect(http.StatusMovedPermanently, helpers.UsersPath())
 	} else {
-		c.JSON(http.StatusOK, gin.H{"success": "user has been deleted successfully!"})
+		c.Redirect(http.StatusMovedPermanently, helpers.UsersPath())
 	}
 }
 
@@ -126,17 +147,15 @@ func findUser(c *gin.Context) (*models.User, error) {
 	return &user, err
 }
 
-func userData(c *gin.Context) models.User {
+func userData(c *gin.Context, user *models.User) *models.User {
 	name := c.PostForm("user[Name]")
 	email := c.PostForm("user[Email]")
 	phone := c.PostForm("user[PhoneNumber]")
 
-	user := models.User{
-		Name:        &name,
-		Email:       &email,
-		PhoneNumber: &phone,
-		Address:     c.PostForm("user[Address]"),
-	}
+	user.Name = &name
+	user.Email = &email
+	user.PhoneNumber = &phone
+	user.Address = c.PostForm("user[Address]")
 
 	return user
 }

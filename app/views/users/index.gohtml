@@ -1,0 +1,32 @@
+{{define "content"}}
+  <div class="section-title clearfix">
+    <h2 class="h2 float-left">{{.title}}</h2>
+    <a href="{{NewUserPath}}" class="float-right btn btn-primary">Add New <i class="bx bx-user"></i></a>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone Number</th>
+          <th scope="col">Address</th>
+          <th scope="col" class="text-center">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{range $user := .users}}
+          <tr>
+            <td>{{$user.ID}}</td>
+            <td>{{$user.Name}}</td>
+            <td>{{$user.Email}}</td>
+            <td>{{$user.PhoneNumber}}</td>
+            <td>{{$user.Address}}</td>
+            <td class="text-center"><a href="{{UserPath $user}}"><box-icon name='show' type='solid' class="text-primary"></box-icon></a></td>
+          </tr>
+        {{end}}
+      </tbody>
+    </table>
+  </div>
+{{end}}

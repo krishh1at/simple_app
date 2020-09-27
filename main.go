@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 
+	"github.com/gin-contrib/sessions"
+	"github.com/gin-contrib/sessions/cookie"
 	"github.com/krishh1at/simple_app/db"
 
 	"github.com/krishh1at/simple_app/routes"
@@ -15,6 +17,9 @@ func main() {
 
 	gin.ForceConsoleColor()
 	router := gin.Default()
+	store := cookie.NewStore([]byte("secret"))
+	router.Use(sessions.Sessions("mysession", store))
+
 	routes.InitRouter(router)
 
 	s := fmt.Sprintf("/users/%v", 10)

@@ -1,0 +1,31 @@
+{{define "content"}}
+  <div class="row">
+    <div class="col-lg-4" data-aos="fade-right">
+      <img src="/assets/images/gopher.jpg" class="img-fluid" alt="">
+    </div>
+    <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+      <h3>{{.user.Name}}</h3>
+      <p class="font-italic">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua.
+      </p>
+      <div class="row">
+        <div class="col-lg-6">
+          <ul>
+            <li><i class="icofont-rounded-right"></i> <strong>Email:</strong> {{.user.Email}}</li>
+            <li><i class="icofont-rounded-right"></i> <strong>Phone Number:</strong> {{.user.PhoneNumber}}</li>
+            <li><i class="icofont-rounded-right"></i> <strong>Address:</strong> {{.user.Address}}</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <a href="{{EditUserPath .user}}" class="btn btn-primary text-light">
+          <i class="fa fa-pencil" aria-hidden="true"></i>
+        </a>
+        <a data-confirm="Are you sure?" href="{{DeleteUserPath .user}}" class="btn btn-danger" title="Delete" rel="nofollow" data-method="delete">
+          <i class="fa fa-trash"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+{{end}}

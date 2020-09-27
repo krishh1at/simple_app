@@ -1,8 +1,7 @@
-package paths
+package helpers
 
 import (
 	"fmt"
-	"html/template"
 
 	"github.com/krishh1at/simple_app/app/models"
 )
@@ -14,7 +13,7 @@ func UserPath(user *models.User) string {
 
 // UsersPath is users index path
 func UsersPath() string {
-	return "/users/"
+	return "/users"
 }
 
 // NewUserPath is path to create new user
@@ -30,25 +29,4 @@ func EditUserPath(user *models.User) string {
 // DeleteUserPath to delete user of given id
 func DeleteUserPath(user *models.User) string {
 	return fmt.Sprintf("/users/%v/delete", user.ID)
-}
-
-// Stringify to make string
-func Stringify(d interface{}) interface{} {
-	var a *string
-
-	if a == d {
-		return ""
-	}
-
-	return d
-}
-
-// Path is all user related path
-var Path = template.FuncMap{
-	"UsersPath":      UsersPath,
-	"UserPath":       UserPath,
-	"NewUserPath":    NewUserPath,
-	"EditUserPath":   EditUserPath,
-	"DeleteUserPath": DeleteUserPath,
-	"string":         Stringify,
 }

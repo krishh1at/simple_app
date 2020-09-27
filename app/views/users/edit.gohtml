@@ -3,7 +3,7 @@
         <h2>{{.title}}</h2>
     </div>
 
-    <form method="put" action="{{UserPath .user}}">
+    <form method="post" action="{{UserPath .user}}">
         {{template "form" .}}
     </form>
 {{end}}
