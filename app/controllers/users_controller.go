@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 
 	"github.com/gin-contrib/sessions"
@@ -157,6 +158,7 @@ func BindFormData(c *gin.Context, user models.User) (*models.User, error) {
 	userData, _ := c.GetPostFormMap("user")
 	jsonbody, _ := json.Marshal(userData)
 	err := json.Unmarshal(jsonbody, &user)
+	fmt.Println(userData, user)
 
 	return &user, err
 }

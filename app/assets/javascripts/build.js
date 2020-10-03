@@ -21,6 +21,10 @@ $(function() {
         var dataMethod = $(this).attr('method');
         var formData = $(this).serialize();
 
+        if(dataMethod.toLowerCase() == "post") {
+            return
+        }
+
         $.ajax(url, {
             method: dataMethod,
             data: formData

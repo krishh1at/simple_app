@@ -10,23 +10,33 @@ import (
 )
 
 // User is type of model to capture all database info
-// Id          uint64    `json:"id"`
-// Name        string    `json:"name"`
-// Email       string    `json:"email"`
-// PhoneNumber string    `json:"phoneNumber"`
-// Address     string    `json:"address"`
-// Created_at  time.Time `json:"createdAt"`
-// Updated_at  time.Time `json:"updatedAt"`
-// Posts       has_many   association
+// ID            uint64 `gorm:"primaryKey"`
+// Name          string `json:"name"`
+// GivenName     string `json:"given_name"`
+// FamilyName    string `json:"family_name"`
+// Profile       string `json:"profile"`
+// Picture       string `json:"picture"`
+// Email         string `gorm:"unique;not null;size:255"`
+// EmailVerified string `json:"email_verified"`
+// Gender        string `json:"gender"`
+// Address       string
+// CreatedAt     time.Time
+// UpdatedAt     time.Time
+// Posts         *[]Post `gorm:"foreignkey:UserID"`
 type User struct {
-	ID          uint64 `gorm:"primaryKey"`
-	Name        string `gorm:"unique;not null;size:255"`
-	Email       string `gorm:"unique;not null;size:255"`
-	PhoneNumber string `gorm:"unique;size:255"`
-	Address     string
-	CreatedAt   time.Time
-	UpdatedAt   time.Time
-	Posts       *[]Post `gorm:"foreignkey:UserID"`
+	ID            uint64 `gorm:"primaryKey"`
+	Name          string `json:"name"`
+	GivenName     string
+	FamilyName    string
+	Sub           string
+	Profile       string `json:"profile"`
+	Picture       string `json:"picture"`
+	Email         string `gorm:"unique;not null;size:255"`
+	EmailVerified bool   `json:"email_verified"`
+	Gender        string `json:"gender"`
+	CreatedAt     time.Time
+	UpdatedAt     time.Time
+	Posts         *[]Post `gorm:"foreignkey:UserID"`
 }
 
 // const (
@@ -35,13 +45,9 @@ type User struct {
 // 	AwsRegion       = "us-east-1"
 // )
 
-// TableName this method return table name
-func (*User) TableName() string {
-	return "users"
-}
-
 // BeforeSave Callback
 func (user *User) BeforeSave(db *gorm.DB) error {
+	user.Name = user.GivenName + " " + user.FamilyName
 	return user.Validate()
 }
 
@@ -55,11 +61,27 @@ func (user *User) BeforeDelete(db *gorm.DB) (err error) {
 // Validate is for validate user
 func (user User) Validate() error {
 	return validation.ValidateStruct(&user,
-		validation.Field(&user.Name, validation.Required, validation.Length(1, 256)),
+		validation.Field(&user.GivenName, validation.Required, validation.Length(1, 50)),
+		validation.Field(&user.FamilyName, validation.Required, validation.Length(1, 50)),
 		validation.Field(&user.Email, validation.Required, is.Email, validation.Length(1, 256)),
-		validation.Field(&user.PhoneNumber, validation.Required, validation.Length(10, 12)),
-		validation.Field(&user.Address, validation.Length(1, 256)),
 	)
+}
+
+// TableName this method return table name
+func (*User) TableName() string {
+	return "users"
+}
+
+// UpdateAuthDetail to update authentication details
+func (user *User) UpdateAuthDetail(u *User, db *gorm.DB) (*User, error) {
+	user.Sub = u.Sub
+	user.EmailVerified = u.EmailVerified
+	user.Profile = u.Profile
+	user.Picture = u.Picture
+	user.Gender = u.Gender
+	err := db.Save(user).Error
+
+	return user, err
 }
 
 // SendSMS is a method to send a message

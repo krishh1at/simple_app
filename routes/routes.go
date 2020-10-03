@@ -42,6 +42,8 @@ func InitRouter(router *gin.Engine) {
 		DisableCache: true,
 	})
 
+	router.GET("/login", controllers.LoginHandler)
+	router.GET("/auth", controllers.AuthHandler)
 	router.GET("/users", controllers.IndexUsers)
 	router.GET("/users/:id", controllers.ShowUser)
 	router.GET("/user/new", controllers.NewUser)

@@ -3,6 +3,8 @@ package helpers
 import (
 	"html/template"
 	"strings"
+
+	"github.com/krishh1at/simple_app/config"
 )
 
 // Stringify to make string
@@ -25,8 +27,14 @@ func ActiveLink(currentPath, path string) string {
 	return ""
 }
 
+// GetLoginURL is used for geting url for oauth2 verification
+func GetLoginURL(state string) string {
+	return config.Conf.AuthCodeURL(state)
+}
+
 // Helper is all user related path
 var Helper = template.FuncMap{
+	"GetLoginURL":    GetLoginURL,
 	"RootPath":       RootPath,
 	"UsersPath":      UsersPath,
 	"UserPath":       UserPath,
