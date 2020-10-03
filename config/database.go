@@ -16,27 +16,28 @@ var DB *gorm.DB
 // Host     string `yaml:"host"`
 // Port     int    `yaml:"port"`
 // User     string `yaml:"user"`
-// Password string `yaml: "password"`
+// Password string `yaml:"password"`
 // DBName   string `yaml:"db_name"`
 type DBConfig struct {
 	Host     string `yaml:"host"`
 	Port     int    `yaml:"port"`
 	User     string `yaml:"user"`
-	Password string `yaml: "password"`
+	Password string `yaml:"password"`
 	DBName   string `yaml:"db_name"`
 }
 
 // BuildDBConfig config database
-func BuildDBConfig() (dbConfig *DBConfig) {
+func BuildDBConfig() *DBConfig {
+	var dbConfig DBConfig
 	file, err := ioutil.ReadFile("./config/database.yml")
 
 	if err != nil {
 		log.Panic(err)
 	}
 
-	yaml.Unmarshal(file, dbConfig)
+	yaml.Unmarshal(file, &dbConfig)
 
-	return dbConfig
+	return &dbConfig
 }
 
 // DbURL generate DB URL
