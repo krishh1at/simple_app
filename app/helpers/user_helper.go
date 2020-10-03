@@ -26,7 +26,12 @@ func EditUserPath(user *models.User) string {
 	return fmt.Sprintf("/users/%v/edit", user.ID)
 }
 
+// UpdateUserPath to return routes for update user path
+func UpdateUserPath(user *models.User) string {
+	return fmt.Sprintf("/modusers/%v", user.ID)
+}
+
 // DeleteUserPath to delete user of given id
 func DeleteUserPath(user *models.User) string {
-	return fmt.Sprintf("/users/%v/delete", user.ID)
+	return fmt.Sprintf("/users/%v", user.ID)
 }

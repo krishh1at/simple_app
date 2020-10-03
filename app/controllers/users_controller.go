@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"encoding/json"
 	"net/http"
 
 	"github.com/gin-contrib/sessions"
@@ -26,8 +27,6 @@ func IndexUsers(c *gin.Context) {
 			"CurrentPath": c.Request.URL.Path,
 			"danger":      session.Flashes("danger"),
 		})
-
-		session.Clear()
 	}
 }
 
@@ -39,7 +38,7 @@ func ShowUser(c *gin.Context) {
 		c.HTML(http.StatusOK, "users/show", gin.H{
 			"title":       "User",
 			"action":      "Show",
-			"user":        user,
+			"user":        &user,
 			"CurrentPath": c.Request.URL.Path,
 		})
 	}
@@ -59,14 +58,19 @@ func NewUser(c *gin.Context) {
 
 // CreateUser to create new user
 func CreateUser(c *gin.Context) {
-	var user *models.User
-	user = userData(c, user)
+	var u models.User
+	user, err := BindFormData(c, u)
 
-	if err := config.DB.Create(&user).Error; err != nil {
+	if err != nil {
+		return
+	}
+
+	if err := config.DB.Create(user).Error; err != nil {
 		c.HTML(http.StatusOK, "users/new", gin.H{
 			"title":       "Create New User",
 			"action":      "Create",
 			"user":        user,
+			"errors":      user.Validate(),
 			"CurrentPath": c.Request.URL.Path,
 		})
 	} else {
@@ -84,7 +88,7 @@ func EditUser(c *gin.Context) {
 		c.HTML(http.StatusOK, "users/edit", gin.H{
 			"title":       "Update User",
 			"action":      "Update",
-			"user":        user,
+			"user":        &user,
 			"CurrentPath": c.Request.URL.Path,
 		})
 	}
@@ -92,8 +96,8 @@ func EditUser(c *gin.Context) {
 
 // UpdateUser updated corresponding user
 func UpdateUser(c *gin.Context) {
-	user, err := findUser(c)
-	user = userData(c, user)
+	u, err := findUser(c)
+	user, err := BindFormData(c, u)
 
 	if err != nil {
 		return
@@ -104,6 +108,7 @@ func UpdateUser(c *gin.Context) {
 			"title":       "Update User",
 			"action":      "Update",
 			"user":        user,
+			"errors":      user.Validate(),
 			"CurrentPath": c.Request.URL.Path,
 		})
 	} else {
@@ -132,7 +137,7 @@ func DeleteUser(c *gin.Context) {
 }
 
 // private function
-func findUser(c *gin.Context) (*models.User, error) {
+func findUser(c *gin.Context) (models.User, error) {
 	var (
 		user models.User
 		err  error
@@ -144,18 +149,14 @@ func findUser(c *gin.Context) (*models.User, error) {
 		c.JSON(http.StatusBadRequest, err.Error())
 	}
 
-	return &user, err
+	return user, err
 }
 
-func userData(c *gin.Context, user *models.User) *models.User {
-	name := c.PostForm("user[Name]")
-	email := c.PostForm("user[Email]")
-	phone := c.PostForm("user[PhoneNumber]")
+// BindFormData to bind form data
+func BindFormData(c *gin.Context, user models.User) (*models.User, error) {
+	userData, _ := c.GetPostFormMap("user")
+	jsonbody, _ := json.Marshal(userData)
+	err := json.Unmarshal(jsonbody, &user)
 
-	user.Name = &name
-	user.Email = &email
-	user.PhoneNumber = &phone
-	user.Address = c.PostForm("user[Address]")
-
-	return user
+	return &user, err
 }

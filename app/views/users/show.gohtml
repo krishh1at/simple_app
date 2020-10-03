@@ -19,11 +19,11 @@
         </div>
       </div>
       <div>
-        <a href="{{EditUserPath .user}}" class="btn btn-primary text-light">
-          <i class="fa fa-pencil" aria-hidden="true"></i>
+        <a href="{{EditUserPath .user}}" class="btn btn-primary text-light" method="post">
+          <i class="fas fa-user-edit" aria-hidden="true"></i>
         </a>
-        <a data-confirm="Are you sure?" href="{{DeleteUserPath .user}}" class="btn btn-danger" title="Delete" rel="nofollow" data-method="delete">
-          <i class="fa fa-trash"></i>
+        <a href="{{DeleteUserPath .user}}" class="btn btn-danger" title="Delete" rel="nofollow" data-method="DELETE" data-confirm="Are you sure?">
+          <i class="fas fa-trash"></i>
         </a>
       </div>
     </div>

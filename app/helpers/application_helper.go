@@ -32,6 +32,7 @@ var Helper = template.FuncMap{
 	"UserPath":       UserPath,
 	"NewUserPath":    NewUserPath,
 	"EditUserPath":   EditUserPath,
+	"UpdateUserPath": UpdateUserPath,
 	"DeleteUserPath": DeleteUserPath,
 	"ActiveLink":     ActiveLink,
 	"string":         Stringify,

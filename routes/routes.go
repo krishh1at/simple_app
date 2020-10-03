@@ -12,6 +12,7 @@ import (
 func InitRouter(router *gin.Engine) {
 	// assets
 	router.Static("/assets/", "./app/assets/")
+	router.Static("/nodes/", "./node_modules/")
 
 	// home routes
 	router.GET("/", controllers.HomeIndex)
@@ -47,5 +48,5 @@ func InitRouter(router *gin.Engine) {
 	router.POST("/users", controllers.CreateUser)
 	router.GET("/users/:id/edit", controllers.EditUser)
 	router.PUT("/users/:id", controllers.UpdateUser)
-	router.DELETE("/users/:id/delete", controllers.DeleteUser)
+	router.DELETE("/users/:id", controllers.DeleteUser)
 }

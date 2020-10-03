@@ -5,11 +5,9 @@ import (
 
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-contrib/sessions/cookie"
-	"github.com/krishh1at/simple_app/db"
-
-	"github.com/krishh1at/simple_app/routes"
-
 	"github.com/gin-gonic/gin"
+	"github.com/krishh1at/simple_app/db"
+	"github.com/krishh1at/simple_app/routes"
 )
 
 func main() {
@@ -24,5 +22,5 @@ func main() {
 
 	s := fmt.Sprintf("/users/%v", 10)
 	fmt.Printf("%v : %T", s, s)
-	router.Run(":3000")
+	router.Run(":8080")
 }
