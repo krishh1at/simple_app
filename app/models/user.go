@@ -19,6 +19,7 @@ import (
 // Email         string `gorm:"unique;not null;size:255"`
 // EmailVerified string `json:"email_verified"`
 // Gender        string `json:"gender"`
+// Admin         bool   `json:"admin"`
 // Address       string
 // CreatedAt     time.Time
 // UpdatedAt     time.Time
@@ -75,6 +76,15 @@ func (*User) TableName() string {
 // UpdateAuthDetail to update authentication details
 func (user *User) UpdateAuthDetail(u *User, db *gorm.DB) (*User, error) {
 	user.Sub = u.Sub
+
+	if u.GivenName != "" {
+		user.GivenName = u.GivenName
+	}
+
+	if u.FamilyName != "" {
+		user.FamilyName = u.FamilyName
+	}
+
 	user.EmailVerified = u.EmailVerified
 	user.Profile = u.Profile
 	user.Picture = u.Picture

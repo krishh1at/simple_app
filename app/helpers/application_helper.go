@@ -32,8 +32,14 @@ func GetLoginURL(state string) string {
 	return config.Conf.AuthCodeURL(state)
 }
 
+// LoginPath is /login
+func LoginPath() string {
+	return "/login"
+}
+
 // Helper is all user related path
 var Helper = template.FuncMap{
+	"LoginPath":      LoginPath,
 	"GetLoginURL":    GetLoginURL,
 	"RootPath":       RootPath,
 	"UsersPath":      UsersPath,

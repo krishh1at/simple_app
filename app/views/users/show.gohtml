@@ -20,7 +20,7 @@
         <a href="{{EditUserPath .user}}" class="btn btn-primary text-light" method="post">
           <i class="fas fa-user-edit" aria-hidden="true"></i>
         </a>
-        <a href="{{DeleteUserPath .user}}" class="btn btn-danger" title="Delete" rel="nofollow" data-method="DELETE" data-confirm="Are you sure?">
+        <a href="{{UsersPath}}" class="btn btn-danger" title="Delete" rel="nofollow" data-method="DELETE" data-href="{{DeleteUserPath .user}}" data-confirm="Are you sure?">
           <i class="fas fa-trash"></i>
         </a>
       </div>

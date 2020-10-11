@@ -51,4 +51,5 @@ func InitRouter(router *gin.Engine) {
 	router.GET("/users/:id/edit", controllers.EditUser)
 	router.PUT("/users/:id", controllers.UpdateUser)
 	router.DELETE("/users/:id", controllers.DeleteUser)
+	router.DELETE("/logout", controllers.LogoutHandler)
 }

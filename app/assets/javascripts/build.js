@@ -2,17 +2,14 @@ $(function() {
     $('a[data-method]').on('click', function(e){
         var confirmMsg = $(this).attr('data-confirm');
 
-        if(confirmMsg != '') {
-            var condition = window.confirm(confirmMsg);
+        if(confirmMsg != undefined) {
+          var condition = window.confirm(confirmMsg);
 
-            if(condition == true){
-                var url = $(this).attr('href');
-                var dataMethod = $(this).attr('data-method');
-
-                $.ajax(url, {
-                    method: dataMethod
-                });
-            }
+          if(condition == true){
+            deleteAjaxRequest(this);
+          }
+        } else {
+          deleteAjaxRequest(this);
         }
     });
 
@@ -21,13 +18,21 @@ $(function() {
         var dataMethod = $(this).attr('method');
         var formData = $(this).serialize();
 
-        if(dataMethod.toLowerCase() == "post") {
-            return
+        if(dataMethod.toLowerCase() != "post") {
+            $.ajax(url, {
+                method: dataMethod,
+                data: formData
+            });
         }
-
-        $.ajax(url, {
-            method: dataMethod,
-            data: formData
-        });
     });
 });
+
+function deleteAjaxRequest(node) {
+  var url = $(node).attr('data-href');
+  var dataMethod = $(node).attr('data-method');
+  console.log(dataMethod);
+
+  $.ajax(url, {
+    method: dataMethod
+  });
+}

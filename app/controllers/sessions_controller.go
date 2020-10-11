@@ -4,7 +4,6 @@ import (
 	"crypto/rand"
 	"encoding/base64"
 	"encoding/json"
-	"fmt"
 	"io/ioutil"
 	"net/http"
 
@@ -16,7 +15,7 @@ import (
 	"golang.org/x/oauth2"
 )
 
-var Session sessions.Session
+var session sessions.Session
 
 func randomToken() string {
 	b := make([]byte, 32)
@@ -42,8 +41,8 @@ func LoginHandler(c *gin.Context) {
 
 // AuthHandler to authenticate
 func AuthHandler(c *gin.Context) {
-	Session = sessions.Default(c)
-	retrievedState := Session.Get("state")
+	session := sessions.Default(c)
+	retrievedState := session.Get("state")
 
 	if retrievedState != c.Query("state") {
 		c.AbortWithStatus(http.StatusUnauthorized)
@@ -77,16 +76,23 @@ func AuthHandler(c *gin.Context) {
 	}
 
 	userID := user.ID
-	Session.Set("user_id", userID)
-	Session.Save()
+	session.Set("user_id", userID)
+	session.Save()
 
 	c.Redirect(http.StatusMovedPermanently, helpers.UsersPath())
 }
 
+// LogoutHandler to render login template
+func LogoutHandler(c *gin.Context) {
+	session := sessions.Default(c)
+	session.Set("user_id", nil)
+	session.Save()
+
+	c.Redirect(http.StatusMovedPermanently, helpers.LoginPath())
+}
+
 func authUser(data []byte) (*models.User, error) {
 	var dbUser, authUser models.User
-
-	fmt.Println("Un:", authUser)
 
 	err := json.Unmarshal(data, &authUser)
 
@@ -101,16 +107,4 @@ func authUser(data []byte) (*models.User, error) {
 	}
 
 	return dbUser.UpdateAuthDetail(&authUser, config.DB)
-}
-
-// CurrentUser is used to find Currentuser
-func CurrentUser() *models.User {
-	var user *models.User
-	currentUserID := Session.Get("user_id")
-
-	if err := config.DB.First(user, currentUserID).Error; err != nil {
-		return nil
-	}
-
-	return user
 }

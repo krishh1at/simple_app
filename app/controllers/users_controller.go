@@ -2,7 +2,6 @@ package controllers
 
 import (
 	"encoding/json"
-	"fmt"
 	"net/http"
 
 	"github.com/gin-contrib/sessions"
@@ -47,6 +46,8 @@ func ShowUser(c *gin.Context) {
 
 // NewUser render template for creating new user
 func NewUser(c *gin.Context) {
+	AuthorizedUser(c)
+
 	var user models.User
 
 	c.HTML(http.StatusOK, "users/new", gin.H{
@@ -59,6 +60,8 @@ func NewUser(c *gin.Context) {
 
 // CreateUser to create new user
 func CreateUser(c *gin.Context) {
+	AuthorizedUser(c)
+
 	var u models.User
 	user, err := BindFormData(c, u)
 
@@ -81,24 +84,20 @@ func CreateUser(c *gin.Context) {
 
 // EditUser to render update form
 func EditUser(c *gin.Context) {
-	user, err := findUser(c)
+	user := AuthorizedUser(c)
 
-	if err != nil {
-		return
-	} else {
-		c.HTML(http.StatusOK, "users/edit", gin.H{
-			"title":       "Update User",
-			"action":      "Update",
-			"user":        &user,
-			"CurrentPath": c.Request.URL.Path,
-		})
-	}
+	c.HTML(http.StatusOK, "users/edit", gin.H{
+		"title":       "Update User",
+		"action":      "Update",
+		"user":        &user,
+		"CurrentPath": c.Request.URL.Path,
+	})
 }
 
 // UpdateUser updated corresponding user
 func UpdateUser(c *gin.Context) {
-	u, err := findUser(c)
-	user, err := BindFormData(c, u)
+	u := AuthorizedUser(c)
+	user, err := BindFormData(c, *u)
 
 	if err != nil {
 		return
@@ -119,22 +118,13 @@ func UpdateUser(c *gin.Context) {
 
 // DeleteUser for deleting user of given id
 func DeleteUser(c *gin.Context) {
-	user, err := findUser(c)
+	user := AuthorizedUser(c)
 
-	if err != nil {
-		return
+	if err := config.DB.Delete(&user).Error; err != nil {
+		c.JSON(http.StatusBadRequest, "Error")
 	}
 
-	session := sessions.Default(c)
-	session.Options(sessions.Options{MaxAge: 5})
-	session.AddFlash("User has been deleted successfully!", "danger")
-	session.Save()
-
-	if err = config.DB.Delete(&user).Error; err != nil {
-		c.Redirect(http.StatusMovedPermanently, helpers.UsersPath())
-	} else {
-		c.Redirect(http.StatusMovedPermanently, helpers.UsersPath())
-	}
+	c.Redirect(http.StatusMovedPermanently, helpers.UsersPath())
 }
 
 // private function
@@ -157,8 +147,7 @@ func findUser(c *gin.Context) (models.User, error) {
 func BindFormData(c *gin.Context, user models.User) (*models.User, error) {
 	userData, _ := c.GetPostFormMap("user")
 	jsonbody, _ := json.Marshal(userData)
-	err := json.Unmarshal(jsonbody, &user)
-	fmt.Println(userData, user)
+	_ = json.Unmarshal(jsonbody, &user)
 
-	return &user, err
+	return &user, nil
 }
