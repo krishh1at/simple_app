@@ -27,13 +27,11 @@ func CurrentUser(c *gin.Context) *models.User {
 }
 
 // AuthorizedUser to authorize request
-func AuthorizedUser(c *gin.Context) *models.User {
+func AuthorizedUser(c *gin.Context) {
+	var u *models.User
 	user := CurrentUser(c)
 
-	if user == nil {
+	if (user == u) || (user == nil) {
 		c.Redirect(http.StatusMovedPermanently, helpers.LoginPath())
-		return nil
 	}
-
-	return user
 }

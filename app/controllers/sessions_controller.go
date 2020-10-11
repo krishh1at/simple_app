@@ -57,7 +57,6 @@ func AuthHandler(c *gin.Context) {
 	}
 
 	client := config.Conf.Client(oauth2.NoContext, token)
-
 	email, err := client.Get("https://www.googleapis.com/oauth2/v3/userinfo")
 
 	if err != nil {
@@ -86,6 +85,7 @@ func AuthHandler(c *gin.Context) {
 func LogoutHandler(c *gin.Context) {
 	session := sessions.Default(c)
 	session.Set("user_id", nil)
+	session.Delete("user_id")
 	session.Save()
 
 	c.Redirect(http.StatusMovedPermanently, helpers.LoginPath())

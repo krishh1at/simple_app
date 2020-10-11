@@ -80,7 +80,8 @@ func CreateUser(c *gin.Context) {
 
 // EditUser to render update form
 func EditUser(c *gin.Context) {
-	user := AuthorizedUser(c)
+	AuthorizedUser(c)
+	user := CurrentUser(c)
 
 	c.HTML(http.StatusOK, "users/edit", gin.H{
 		"title":       "Update User",
@@ -92,7 +93,8 @@ func EditUser(c *gin.Context) {
 
 // UpdateUser updated corresponding user
 func UpdateUser(c *gin.Context) {
-	u := AuthorizedUser(c)
+	AuthorizedUser(c)
+	u := CurrentUser(c)
 	user, err := BindFormData(c, *u)
 
 	if err != nil {
@@ -114,7 +116,8 @@ func UpdateUser(c *gin.Context) {
 
 // DeleteUser for deleting user of given id
 func DeleteUser(c *gin.Context) {
-	authUser := AuthorizedUser(c)
+	AuthorizedUser(c)
+	authUser := CurrentUser(c)
 	user, err := findUser(c)
 
 	if err != nil {

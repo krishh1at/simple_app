@@ -3,7 +3,12 @@
 <header id="header">
   <div class="d-flex flex-column">
     <div class="profile">
-      <img src="/assets/images/gopher.jpg" alt="" class="img-fluid rounded-circle">
+      {{if .user.Picture}}
+        <img src="{{.user.Picture}}" alt="{{.user.Name}}" class="img-fluid rounded-circle">
+      {{else}}
+        <img src="/assets/images/gopher.jpg" alt="Gopher" class="img-fluid rounded-circle">
+      {{end}}
+
       <h1 class="text-light"><a href="#">Hi User</a></h1>
 
       <div class="social-links mt-3 text-center">
