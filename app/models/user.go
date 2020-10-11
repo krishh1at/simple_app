@@ -35,16 +35,11 @@ type User struct {
 	Email         string `gorm:"unique;not null;size:255"`
 	EmailVerified bool   `json:"email_verified"`
 	Gender        string `json:"gender"`
+	Admin         bool   `json:"admin"`
 	CreatedAt     time.Time
 	UpdatedAt     time.Time
 	Posts         *[]Post `gorm:"foreignkey:UserID"`
 }
-
-// const (
-// 	AccessKeyID     = "xxxxxxxxxxxxxx"
-// 	SecretAccessKey = "xxxxxxxxxxx"
-// 	AwsRegion       = "us-east-1"
-// )
 
 // BeforeSave Callback
 func (user *User) BeforeSave(db *gorm.DB) error {
@@ -93,26 +88,3 @@ func (user *User) UpdateAuthDetail(u *User, db *gorm.DB) (*User, error) {
 
 	return user, err
 }
-
-// SendSMS is a method to send a message
-// func (user *User) SendSMS(msg string) (*sns.PublishOutput, error) {
-// 	session, err := session.NewSession(&aws.Config{
-// 		Region:      aws.String(AwsRegion),
-// 		Credentials: credentials.NewStaticCredentials(AccessKeyID, SecretAccessKey, ""),
-// 	})
-
-// 	if err != nil {
-// 		return nil, err
-// 	}
-
-// 	svc := sns.New(session)
-
-// 	params := &sns.PublishInput{
-// 		PhoneNumber: aws.String(user.PhoneNumber),
-// 		Message:     aws.String(msg),
-// 	}
-
-// 	resp, err := svc.Publish(params)
-
-// 	return resp, err
-// }

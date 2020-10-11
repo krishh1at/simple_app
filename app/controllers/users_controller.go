@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/gin-contrib/sessions"
 	"github.com/gin-gonic/gin"
 	"github.com/krishh1at/simple_app/app/helpers"
 	"github.com/krishh1at/simple_app/app/models"
@@ -18,14 +17,11 @@ func IndexUsers(c *gin.Context) {
 	if err := config.DB.Preload("Posts").Find(&users).Error; err != nil {
 		c.JSON(http.StatusBadRequest, err.Error())
 	} else {
-		session := sessions.Default(c)
-
 		c.HTML(http.StatusOK, "users/index", gin.H{
 			"title":       "Users",
 			"action":      "Index",
 			"users":       users,
 			"CurrentPath": c.Request.URL.Path,
-			"danger":      session.Flashes("danger"),
 		})
 	}
 }
@@ -118,10 +114,17 @@ func UpdateUser(c *gin.Context) {
 
 // DeleteUser for deleting user of given id
 func DeleteUser(c *gin.Context) {
-	user := AuthorizedUser(c)
+	authUser := AuthorizedUser(c)
+	user, err := findUser(c)
 
-	if err := config.DB.Delete(&user).Error; err != nil {
-		c.JSON(http.StatusBadRequest, "Error")
+	if err != nil {
+		return
+	}
+
+	if authUser.ID == user.ID {
+		if err := config.DB.Delete(&user).Error; err != nil {
+			c.JSON(http.StatusBadRequest, "Error")
+		}
 	}
 
 	c.Redirect(http.StatusMovedPermanently, helpers.UsersPath())
