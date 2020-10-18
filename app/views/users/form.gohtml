@@ -1,49 +1,49 @@
 {{define "form"}}
-    <div class="form-group">
-        {{.errors}}
-    </div>
+  <div class="form-group">
+    {{.errors}}
+  </div>
 
-    <div class="form-group">
-        <label for="user_given_name">First Name</label>
-        <input
-            type="text"
-            class="form-control"
-            id="user_given_name"
-            name="user[GivenName]"
-            value="{{string .user.GivenName}}"
-            placeholder="Enter First Name"
-        >
-    </div>
-
-    <div class="form-group">
-        <label for="user_family_name">Last Name</label>
-        <input
-            type="text"
-            class="form-control"
-            id="user_family_name"
-            name="user[FamilyName]"
-            value="{{string .user.FamilyName}}"
-            placeholder="Enter Last Name"
-        >
-    </div>
-
-
-    <div class="form-group">
-        <label for="user_email">Email</label>
-        <input
-            type="email"
-            class="form-control"
-            id="user_email"
-            name="user[Email]"
-            value="{{string .user.Email}}"
-            placeholder="Enter Email"
-        >
-    </div>
-
+  <div class="form-group">
+    <label for="user_given_name">First Name</label>
     <input
-        type="submit"
-        class="btn btn-primary"
-        data-disabled-with="Creating..."
-        value="{{.action}}"
+      type="text"
+      class="form-control"
+      id="user_given_name"
+      name="user[GivenName]"
+      value="{{string .user.GivenName}}"
+      placeholder="Enter First Name"
     >
+  </div>
+
+  <div class="form-group">
+    <label for="user_family_name">Last Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="user_family_name"
+      name="user[FamilyName]"
+      value="{{string .user.FamilyName}}"
+      placeholder="Enter Last Name"
+    >
+  </div>
+
+
+  <div class="form-group">
+    <label for="user_email">Email</label>
+    <input
+      type="email"
+      class="form-control"
+      id="user_email"
+      name="user[Email]"
+      value="{{string .user.Email}}"
+      placeholder="Enter Email"
+    >
+  </div>
+
+  <input
+    type="submit"
+    class="btn btn-primary"
+    data-disabled-with="Creating..."
+    value="{{.action}}"
+  >
 {{end}}

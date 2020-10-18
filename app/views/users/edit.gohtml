@@ -1,9 +1,9 @@
 {{define "content"}}
-    <div class="section-title">
-        <h2>{{.title}}</h2>
-    </div>
+  <div class="section-title">
+    <h2>{{.title}}</h2>
+  </div>
 
-    <form method="put" action="{{UserPath .user}}">
-        {{template "form" .}}
-    </form>
+  <form method="put" action="{{UserPath .user}}">
+    {{template "form" .}}
+  </form>
 {{end}}
