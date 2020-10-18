@@ -1,19 +1,18 @@
 package api
 
 import (
-	"github.com/krishh1at/simple_app/app/models"
-	"github.com/krishh1at/simple_app/config"
+	"net/http"
 
 	"github.com/gin-gonic/gin"
-
-	"net/http"
+	"github.com/krishh1at/simple_app/app/models"
+	"github.com/krishh1at/simple_app/config"
 )
 
 // IndexUsers renders all users
 func IndexUsers(c *gin.Context) {
 	var users []models.User
 
-	if err := config.DB.Preload("Posts").Find(&users).Error; err != nil {
+	if err := config.DB.Preload("Posts").Order("id desc").Find(&users).Error; err != nil {
 		c.JSON(http.StatusBadRequest, err.Error())
 	} else {
 		c.JSON(http.StatusOK, users)

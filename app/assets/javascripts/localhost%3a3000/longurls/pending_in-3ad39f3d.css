@@ -1,0 +1,1087 @@
+/* line 5, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .all-indent-form .header div {
+  padding-top: 0;
+}
+/* line 9, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .all-indent-form .header .float-left {
+  padding-top: 26px;
+}
+
+/* line 15, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .po-details-modal-table {
+  width: 100%;
+}
+/* line 18, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .po-details-modal-table thead tr {
+  height: 25px;
+}
+/* line 22, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .po-details-modal-table thead th {
+  width: 14.28%;
+  background-color: #ebebeb;
+}
+/* line 27, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .po-details-modal-table tbody tr:nth-of-type(even), #new_content .po-details-modal-table tbody tr:nth-of-type(odd) {
+  height: 68px;
+  background-color: #ffffff;
+  border-bottom: solid 1px #e9e9e9;
+}
+/* line 33, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .po-details-modal-table tr td:first-child {
+  width: 14.28%;
+  vertical-align: middle;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+/* line 40, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .po-details-modal-table th, #new_content .po-details-modal-table td {
+  padding: 3px;
+}
+/* line 44, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .po-details-modal-table thead th:first-child {
+  width: 14.28%;
+  padding-bottom: 2px;
+  padding-left: 20px;
+}
+/* line 50, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .po-details-modal-table thead th:last-child {
+  width: auto;
+  padding-bottom: 2px;
+  padding-left: 0px;
+}
+
+/* line 58, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .all-indents td, #new_content .all-indents th {
+  padding-left: 2px !important;
+  padding-right: 2px !important;
+}
+
+/* line 65, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents .white-bg, #new_content .enquiries .white-bg, #new_content .purchase-orders .white-bg, #new_content .delivery .white-bg, #new_content .all-indents .white-bg {
+  background-color: #ffffff;
+}
+/* line 69, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents .grey-bg, #new_content .enquiries .grey-bg, #new_content .purchase-orders .grey-bg, #new_content .delivery .grey-bg, #new_content .all-indents .grey-bg {
+  background-color: #f5f1f1;
+}
+/* line 73, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents .indent-date-search, #new_content .enquiries .indent-date-search, #new_content .purchase-orders .indent-date-search, #new_content .delivery .indent-date-search, #new_content .all-indents .indent-date-search {
+  width: 100%;
+  height: 36px;
+  border-radius: 3px;
+  background-color: #fbfbfb;
+  border: solid 1px #dddddd;
+  padding: 3px;
+  margin-top: 4px;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+/* line 85, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents .check-box, #new_content .enquiries .check-box, #new_content .purchase-orders .check-box, #new_content .delivery .check-box, #new_content .all-indents .check-box {
+  min-width: 55px;
+  max-width: 55px;
+}
+/* line 90, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents .check-box1, #new_content .enquiries .check-box1, #new_content .purchase-orders .check-box1, #new_content .delivery .check-box1, #new_content .all-indents .check-box1 {
+  min-width: 30px;
+  max-width: 30px;
+  padding-bottom: 20px;
+}
+/* line 96, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents .department, #new_content .enquiries .department, #new_content .purchase-orders .department, #new_content .delivery .department, #new_content .all-indents .department {
+  min-width: 40px;
+  max-width: 80px;
+  padding-bottom: 50px;
+}
+/* line 102, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents .rfq-desc, #new_content .enquiries .rfq-desc, #new_content .purchase-orders .rfq-desc, #new_content .delivery .rfq-desc, #new_content .all-indents .rfq-desc {
+  font-size: 12px;
+}
+/* line 106, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents .item-name, #new_content .enquiries .item-name, #new_content .purchase-orders .item-name, #new_content .delivery .item-name, #new_content .all-indents .item-name {
+  min-width: 180px;
+  max-width: 180px;
+}
+/* line 111, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents .groups, #new_content .enquiries .groups, #new_content .purchase-orders .groups, #new_content .delivery .groups, #new_content .all-indents .groups {
+  min-width: 100px;
+  max-width: 100px;
+}
+/* line 116, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents .company, #new_content .enquiries .company, #new_content .purchase-orders .company, #new_content .delivery .company, #new_content .all-indents .company {
+  min-width: 120px;
+  max-width: 120px;
+}
+/* line 121, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents .vendor, #new_content .enquiries .vendor, #new_content .purchase-orders .vendor, #new_content .delivery .vendor, #new_content .all-indents .vendor {
+  min-width: 140px;
+  max-width: 140px;
+}
+/* line 126, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents .qty-pending, #new_content .enquiries .qty-pending, #new_content .purchase-orders .qty-pending, #new_content .delivery .qty-pending, #new_content .all-indents .qty-pending {
+  min-width: 100px;
+  max-width: 100px;
+  padding-bottom: 50px;
+}
+/* line 132, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents .indent-no, #new_content .pending-indents .rfq-no, #new_content .pending-indents .po-no, #new_content .enquiries .indent-no, #new_content .enquiries .rfq-no, #new_content .enquiries .po-no, #new_content .purchase-orders .indent-no, #new_content .purchase-orders .rfq-no, #new_content .purchase-orders .po-no, #new_content .delivery .indent-no, #new_content .delivery .rfq-no, #new_content .delivery .po-no, #new_content .all-indents .indent-no, #new_content .all-indents .rfq-no, #new_content .all-indents .po-no {
+  min-width: 90px;
+  max-width: 90px;
+}
+/* line 137, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents .prev-po, #new_content .enquiries .prev-po, #new_content .purchase-orders .prev-po, #new_content .delivery .prev-po, #new_content .all-indents .prev-po {
+  min-width: 80px;
+  max-width: 80px;
+  padding-bottom: 50px;
+}
+/* line 143, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents .prev-po-vendor, #new_content .enquiries .prev-po-vendor, #new_content .purchase-orders .prev-po-vendor, #new_content .delivery .prev-po-vendor, #new_content .all-indents .prev-po-vendor {
+  min-width: 140px;
+  max-width: 140px;
+}
+/* line 148, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents .state-date, #new_content .pending-indents .state-person, #new_content .pending-indents .vendor-count, #new_content .pending-indents .appr-date, #new_content .enquiries .state-date, #new_content .enquiries .state-person, #new_content .enquiries .vendor-count, #new_content .enquiries .appr-date, #new_content .purchase-orders .state-date, #new_content .purchase-orders .state-person, #new_content .purchase-orders .vendor-count, #new_content .purchase-orders .appr-date, #new_content .delivery .state-date, #new_content .delivery .state-person, #new_content .delivery .vendor-count, #new_content .delivery .appr-date, #new_content .all-indents .state-date, #new_content .all-indents .state-person, #new_content .all-indents .vendor-count, #new_content .all-indents .appr-date {
+  padding-bottom: 50px;
+}
+/* line 152, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents .state, #new_content .enquiries .state, #new_content .purchase-orders .state, #new_content .delivery .state, #new_content .all-indents .state {
+  min-width: 100px;
+  max-width: 100px;
+}
+/* line 157, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents .brands, #new_content .enquiries .brands, #new_content .purchase-orders .brands, #new_content .delivery .brands, #new_content .all-indents .brands {
+  min-width: 60px;
+  max-width: 110px;
+}
+/* line 162, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents .costcentre, #new_content .enquiries .costcentre, #new_content .purchase-orders .costcentre, #new_content .delivery .costcentre, #new_content .all-indents .costcentre {
+  min-width: 120px;
+  max-width: 120px;
+}
+/* line 167, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents .actions, #new_content .enquiries .actions, #new_content .purchase-orders .actions, #new_content .delivery .actions, #new_content .all-indents .actions {
+  min-width: 80px;
+  max-width: 80px;
+}
+/* line 172, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents .qty, #new_content .enquiries .qty, #new_content .purchase-orders .qty, #new_content .delivery .qty, #new_content .all-indents .qty {
+  min-width: 75px;
+  max-width: 75px;
+  padding-bottom: 50px;
+}
+/* line 178, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents .notes, #new_content .enquiries .notes, #new_content .purchase-orders .notes, #new_content .delivery .notes, #new_content .all-indents .notes {
+  min-width: 60px;
+  max-width: 60px;
+  padding-bottom: 50px;
+}
+/* line 184, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents .attachments, #new_content .enquiries .attachments, #new_content .purchase-orders .attachments, #new_content .delivery .attachments, #new_content .all-indents .attachments {
+  min-width: 120px;
+  max-width: 120px;
+  padding-bottom: 50px;
+}
+/* line 190, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents .indent-details, #new_content .enquiries .indent-details, #new_content .purchase-orders .indent-details, #new_content .delivery .indent-details, #new_content .all-indents .indent-details {
+  min-width: 85px;
+  max-width: 85px;
+  padding-bottom: 50px;
+}
+/* line 196, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents .reqd-date, #new_content .pending-indents .po-date, #new_content .enquiries .reqd-date, #new_content .enquiries .po-date, #new_content .purchase-orders .reqd-date, #new_content .purchase-orders .po-date, #new_content .delivery .reqd-date, #new_content .delivery .po-date, #new_content .all-indents .reqd-date, #new_content .all-indents .po-date {
+  min-width: 100px;
+  max-width: 100px;
+}
+/* line 201, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents .del-date, #new_content .enquiries .del-date, #new_content .purchase-orders .del-date, #new_content .delivery .del-date, #new_content .all-indents .del-date {
+  min-width: 100px;
+  max-width: 100px;
+  padding-bottom: 50px;
+}
+/* line 207, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents .req-date, #new_content .enquiries .req-date, #new_content .purchase-orders .req-date, #new_content .delivery .req-date, #new_content .all-indents .req-date {
+  min-width: 100px;
+  max-width: 100px;
+}
+/* line 212, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents .indent-date, #new_content .enquiries .indent-date, #new_content .purchase-orders .indent-date, #new_content .delivery .indent-date, #new_content .all-indents .indent-date {
+  min-width: 100px;
+  max-width: 100px;
+}
+/* line 217, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents .req-by, #new_content .pending-indents .rfq-by, #new_content .enquiries .req-by, #new_content .enquiries .rfq-by, #new_content .purchase-orders .req-by, #new_content .purchase-orders .rfq-by, #new_content .delivery .req-by, #new_content .delivery .rfq-by, #new_content .all-indents .req-by, #new_content .all-indents .rfq-by {
+  min-width: 70px;
+  max-width: 120px;
+}
+/* line 222, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents .status, #new_content .enquiries .status, #new_content .purchase-orders .status, #new_content .delivery .status, #new_content .all-indents .status {
+  min-width: 90px;
+  max-width: 90px;
+}
+/* line 227, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents .vendors, #new_content .enquiries .vendors, #new_content .purchase-orders .vendors, #new_content .delivery .vendors, #new_content .all-indents .vendors {
+  min-width: 200px;
+  max-width: 200px;
+  padding-bottom: 50px;
+}
+/* line 233, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents .quotations-recd, #new_content .enquiries .quotations-recd, #new_content .purchase-orders .quotations-recd, #new_content .delivery .quotations-recd, #new_content .all-indents .quotations-recd {
+  padding-bottom: 50px;
+  min-width: 100px;
+  max-width: 100px;
+}
+
+/* line 241, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents thead th, #new_content .enquiries thead th, #new_content .purchase-orders thead th, .delivery thead th, #new_content .all-indents thead th {
+  font-size: 12px;
+  line-height: 12px;
+}
+/* line 245, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents thead th input, #new_content .enquiries thead th input, #new_content .purchase-orders thead th input, .delivery thead th input, #new_content .all-indents thead th input {
+  margin-bottom: 8px;
+  margin-top: 6px;
+}
+/* line 250, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents thead th .item-search, #new_content .enquiries thead th .item-search, #new_content .purchase-orders thead th .item-search, .delivery thead th .item-search, #new_content .all-indents thead th .item-search {
+  width: 135px;
+  height: 36px;
+  border-radius: 3px;
+  background-color: #fbfbfb;
+  border: solid 1px #dddddd;
+}
+/* line 258, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents thead th .indent-no-search, #new_content .enquiries thead th .indent-no-search, #new_content .purchase-orders thead th .indent-no-search, .delivery thead th .indent-no-search, #new_content .all-indents thead th .indent-no-search {
+  width: 90px;
+  height: 36px;
+  border-radius: 3px;
+  background-color: #fbfbfb;
+  border: solid 1px #dddddd;
+}
+/* line 266, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents thead th .qty-search, #new_content .enquiries thead th .qty-search, #new_content .purchase-orders thead th .qty-search, .delivery thead th .qty-search, #new_content .all-indents thead th .qty-search {
+  width: 75px;
+  height: 36px;
+  opacity: 0.3;
+  border-radius: 3px;
+  background-color: #ffffff;
+  border: solid 1px #dddddd;
+}
+/* line 275, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents thead th .groups-search, #new_content .enquiries thead th .groups-search, #new_content .purchase-orders thead th .groups-search, .delivery thead th .groups-search, #new_content .all-indents thead th .groups-search {
+  width: 147px;
+  height: 36px;
+  border-radius: 3px;
+  background-color: #fbfbfb;
+  border: solid 1px #dddddd;
+}
+/* line 283, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents thead th .brands-search, #new_content .enquiries thead th .brands-search, #new_content .purchase-orders thead th .brands-search, .delivery thead th .brands-search, #new_content .all-indents thead th .brands-search {
+  width: 157px;
+  height: 36px;
+  border-radius: 3px;
+  background-color: #fbfbfb;
+  border: solid 1px #dddddd;
+}
+/* line 291, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents thead th .reqd-date-search, #new_content .pending-indents thead th .po-date-search, #new_content .enquiries thead th .reqd-date-search, #new_content .enquiries thead th .po-date-search, #new_content .purchase-orders thead th .reqd-date-search, #new_content .purchase-orders thead th .po-date-search, .delivery thead th .reqd-date-search, .delivery thead th .po-date-search, #new_content .all-indents thead th .reqd-date-search, #new_content .all-indents thead th .po-date-search {
+  width: 100%;
+  height: 36px;
+  border-radius: 3px;
+  background-color: #fbfbfb;
+  border: solid 1px #dddddd;
+  padding: 3px;
+}
+/* line 300, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents thead th .company-search, #new_content .enquiries thead th .company-search, #new_content .purchase-orders thead th .company-search, .delivery thead th .company-search, #new_content .all-indents thead th .company-search {
+  width: 100%;
+  height: 36px;
+  border-radius: 3px;
+  background-color: #fbfbfb;
+  border: solid 1px #dddddd;
+  margin-bottom: 8px;
+  color: #868e96;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 6px;
+}
+/* line 313, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents thead th .status-search, #new_content .enquiries thead th .status-search, #new_content .purchase-orders thead th .status-search, .delivery thead th .status-search, #new_content .all-indents thead th .status-search {
+  width: 100% !important;
+  height: 36px;
+  border-radius: 3px;
+  background-color: #fbfbfb;
+  border: solid 1px #dddddd;
+  margin-bottom: 8px;
+  color: #868e96;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 6px;
+}
+/* line 326, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents thead th .req-by-search, #new_content .enquiries thead th .req-by-search, #new_content .purchase-orders thead th .req-by-search, .delivery thead th .req-by-search, #new_content .all-indents thead th .req-by-search {
+  width: 109px;
+  height: 36px;
+  border-radius: 3px;
+  background-color: #fbfbfb;
+  border: solid 1px #dddddd;
+}
+/* line 334, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents thead th .req-date-search, #new_content .enquiries thead th .req-date-search, #new_content .purchase-orders thead th .req-date-search, .delivery thead th .req-date-search, #new_content .all-indents thead th .req-date-search {
+  width: 100%;
+  height: 36px;
+  border-radius: 3px;
+  background-color: #fbfbfb;
+  border: solid 1px #dddddd;
+  padding: 3px;
+}
+/* line 343, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents thead th .notes-search, #new_content .enquiries thead th .notes-search, #new_content .purchase-orders thead th .notes-search, .delivery thead th .notes-search, #new_content .all-indents thead th .notes-search {
+  width: 43px;
+  height: 36px;
+  opacity: 0.3;
+  border-radius: 3px;
+  background-color: #ffffff;
+  border: solid 1px #dddddd;
+}
+
+/* line 354, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents .date-over, #new_content .enquiries .date-over, #new_content .purchase-orders .date-over, .delivery .date-over, #new_content .all-indents .date-over {
+  color: #dc3545;
+}
+
+/* line 360, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents input, #new_content .all-indents input {
+  padding: 10px;
+}
+
+/* line 365, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#indents-notes-modal .modal-header {
+  border-bottom: solid 1px #979797;
+}
+
+/* line 369, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#indents-notes-modal .modal-body {
+  padding-top: 10px;
+  min-height: 100px;
+}
+
+/* line 374, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.indent-notes {
+  cursor: pointer;
+  width: 24px;
+  height: 19px;
+  color: #138294;
+}
+
+/* line 381, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.urgent-indent {
+  border-radius: 12px;
+  border: solid 1px #dc3545;
+  padding: 1px 8px;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  color: #dc3545;
+  display: inline-block;
+  margin-bottom: 2px;
+}
+
+/* line 392, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.indent-attachments a {
+  padding: 0;
+}
+/* line 395, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.indent-attachments a:hover {
+  text-decoration: none;
+}
+/* line 399, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.indent-attachments a a {
+  display: inline-block;
+  line-height: 0;
+}
+/* line 404, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.indent-attachments a i {
+  color: #2eabbf;
+}
+
+/* line 409, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.clarify-indent {
+  border-radius: 12px;
+  border: solid 1px #6464f3;
+  padding: 1px 8px;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  color: #35588c;
+  display: inline-block;
+  margin-bottom: 2px;
+}
+
+/* line 420, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.clarify-indent-vendor {
+  border-radius: 12px;
+  border: solid 1px #214a4e;
+  padding: 1px 8px;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  color: #1f4c39;
+  display: inline-block;
+  margin-bottom: 2px;
+}
+
+/* line 431, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.po-made {
+  border-radius: 12px;
+  border: solid 1px #28a745;
+  padding: 1px 8px;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  color: #28a745;
+  display: inline-block;
+  margin-bottom: 2px;
+}
+
+/* line 442, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.rfq-done {
+  border-radius: 12px;
+  border: solid 1px #c19716;
+  padding: 1px 8px;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  color: #a58013;
+  display: inline-block;
+  margin-bottom: 2px;
+}
+
+/* line 453, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.po-status {
+  border-radius: 12px;
+  border: solid 1px #28a745;
+  padding: 1px 8px;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  color: #28a745;
+  display: inline-block;
+  margin-bottom: 2px;
+  text-transform: uppercase;
+}
+
+/* line 465, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.indent-border {
+  border-bottom: solid 2px #17a2b8;
+}
+
+/* line 469, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.selected-row {
+  background-color: #e2f2f5 !important;
+}
+
+/* line 473, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .pending-indents .action .dropdown-menu, #new_content .enquiries .action .dropdown-menu, #new_content .all-indents .action .dropdown-menu {
+  top: -8px !important;
+  left: -58px !important;
+  padding: 0px;
+  min-width: 126px;
+  min-height: 68px;
+}
+
+/* line 481, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.pending-indents-filter-btns {
+  margin-top: 21px;
+}
+
+/* line 485, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.pending-indents-action-btns {
+  margin-top: 13px;
+}
+
+/* line 489, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.pending-indent-remove-filter {
+  width: 180px;
+  border-radius: 4px;
+  border: solid 1px #17a2b8;
+  background-color: #138294;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.7px;
+  text-align: center;
+  color: #ffffff;
+  padding: 7px 20px;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 10px;
+}
+/* line 505, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.pending-indent-remove-filter:hover {
+  background-color: #ffffff;
+  color: #138294;
+  text-decoration: none;
+}
+
+/* line 512, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.create-new-indent {
+  border-radius: 4px;
+  border: solid 1px #17a2b8;
+  background-color: #138294;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  text-align: center;
+  color: #ffffff;
+  padding: 7px 20px;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 10px;
+}
+/* line 525, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.create-new-indent:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* line 531, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.new-indent {
+  margin-top: 15px;
+  margin-left: auto;
+}
+
+/* line 536, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.inactive-filters {
+  width: 210px;
+  border-radius: 4px;
+  border: solid 1px #17a2b8;
+  background-color: #ffffff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.7px;
+  text-align: center;
+  color: #138294;
+  padding: 7px 20px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+/* line 552, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.pending-indents-bulk-action {
+  width: 160px;
+  height: 32px;
+  border-radius: 3px;
+  border: solid 1px #17a2b8;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.43;
+  letter-spacing: 0.7px;
+  text-align: center;
+  color: #138294;
+  background-color: #ffffff;
+  margin-right: 10px;
+  cursor: pointer;
+}
+/* line 570, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.pending-indents-bulk-action:hover {
+  background-color: #138294;
+  color: #ffffff;
+}
+
+/* line 576, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.apply-search {
+  height: 39px;
+  width: 250px;
+  border-top: solid 1px #979797;
+}
+
+/* line 582, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.apply {
+  border-radius: 3px;
+  border: solid 1px #17a2b8;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.43;
+  letter-spacing: 0.2px;
+  text-align: center;
+  color: #138294;
+  padding: 3px;
+  display: inline-block;
+  position: absolute;
+  bottom: 6px;
+  right: 15px;
+  font-weight: 500;
+}
+/* line 598, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.apply:hover {
+  background-color: #138294;
+  color: #ffffff;
+}
+
+/* line 604, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.clear-options {
+  border-radius: 3px;
+  border: solid 1px #868686;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.43;
+  letter-spacing: 0.2px;
+  text-align: center;
+  color: #138294;
+  padding: 3px;
+  display: inline-block;
+  position: absolute;
+  bottom: 6px;
+  left: 15px;
+  font-weight: 500;
+}
+/* line 620, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.clear-options:hover {
+  background-color: #e3e3e3;
+  color: #000;
+}
+
+/* line 626, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.download-pending-indents {
+  border: none;
+}
+
+/* line 630, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.indent-stock {
+  font-size: 10px;
+}
+
+/* line 634, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.pending-indents-count {
+  color: #ffffff;
+  background-color: #138294;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  display: inline-block;
+  float: right;
+}
+
+/* line 644, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+a.pending-indent-count {
+  display: inline-block;
+  color: #138294;
+  text-decoration: none;
+}
+
+/* line 651, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.sub-tabs .pending-indents-count {
+  color: #ffffff;
+  background-color: #868e96;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  display: inline-block;
+  float: right;
+}
+/* line 661, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.sub-tabs a.pending-indent-count {
+  display: inline-block;
+  color: #404244;
+  text-decoration: none;
+}
+
+/* line 669, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#clarification_modal .modal-header {
+  border-bottom: solid 1px #979797;
+  padding: 15px;
+}
+/* line 674, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#clarification_modal .clarify-query {
+  width: 498px;
+  height: 75px;
+  border-radius: 3px;
+  background-color: #fbfbfb;
+  border: solid 1px #dddddd;
+  padding: 9px 14px;
+  margin-top: 10px;
+}
+/* line 684, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#clarification_modal .person-details {
+  color: #848484;
+  font-size: 12px;
+  padding-top: 7px;
+  margin-right: 10px;
+}
+/* line 691, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#clarification_modal .spec-details {
+  font-size: 16px;
+  border-bottom: solid 1px #dddddd;
+  padding-bottom: 10px;
+  padding-left: 7px;
+  padding-right: 7px;
+  clear: both;
+  color: #464646;
+}
+/* line 701, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#clarification_modal .indent-spec-content {
+  max-height: 400px;
+  overflow-y: auto;
+}
+/* line 705, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#clarification_modal .indent-spec-content::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #F5F5F5;
+}
+/* line 710, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#clarification_modal .indent-spec-content::-webkit-scrollbar {
+  width: 6px;
+  background-color: #F5F5F5;
+}
+/* line 715, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#clarification_modal .indent-spec-content::-webkit-scrollbar-thumb {
+  background-color: #868e96;
+  border-radius: 3px;
+}
+
+/* line 722, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.pending-indents-header {
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* line 726, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.pending-indents-navbar {
+  padding: 20px 0 0 20px;
+  font-size: 18px;
+  width: 280px;
+}
+
+/* line 732, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.pending-indent-navbar-content {
+  border-bottom: 2px solid #138294;
+  padding-bottom: 20px;
+}
+
+/* line 737, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.vendor-names {
+  cursor: pointer;
+}
+
+/* line 742, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#po_details_modal .modal-dialog {
+  right: 0;
+  height: calc(100vh - 60px);
+  top: 60px;
+  position: fixed;
+  margin: auto;
+  max-width: 850px;
+  min-width: 850px;
+  -webkit-transform: translate3d(0%, 0, 0);
+  -ms-transform: translate3d(0%, 0, 0);
+  -o-transform: translate3d(0%, 0, 0);
+  transform: translate3d(0%, 0, 0);
+}
+/* line 757, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#po_details_modal .modal-content {
+  min-width: unset;
+  border-radius: 0;
+  height: 100%;
+}
+
+/* line 764, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.po-link a {
+  color: #17a2b8;
+}
+
+/* line 768, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.view-columns {
+  vertical-align: middle;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  font-size: 23px;
+  color: #326182;
+  border-radius: 3px;
+  border: solid 1px #868e96;
+}
+
+/* line 781, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.export-button-delivery {
+  border-radius: 3px;
+  background-color: #ffffff;
+  border: solid 1px #979797;
+  font-size: 14px;
+  color: #000000;
+  cursor: pointer;
+  text-transform: uppercase;
+  padding: 3px 8px;
+}
+/* line 791, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.export-button-delivery:hover {
+  background-color: #e7e5e5;
+}
+
+/* line 796, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.short-close-button {
+  padding: 7px 20px;
+}
+/* line 799, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.short-close-button:hover {
+  text-decoration: none;
+}
+
+/* line 804, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.short-close-now {
+  border: none;
+}
+
+/* line 808, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#grn_entry_modal .modal-content, #grn_entry_modal .modal-dialog-centered {
+  min-width: 800px;
+}
+
+/* line 812, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#grn_entry_modal .modal-header {
+  border-bottom: 1px solid #868686;
+  height: 66px;
+  padding: 21px;
+}
+
+/* line 818, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#grn_entry_modal .modal-footer {
+  justify-content: center;
+}
+
+/* line 822, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#grn_entry_modal .row {
+  margin-top: 15px;
+}
+
+/* line 826, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .new-grn-entry-table {
+  width: 740px;
+  border-bottom: 1px solid #868686;
+}
+/* line 830, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .new-grn-entry-table tbody tr:nth-of-type(even) {
+  background-color: #ffffff;
+}
+/* line 834, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .new-grn-entry-table tbody td {
+  padding-bottom: 0px;
+}
+/* line 838, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .new-grn-entry-table thead tr {
+  height: auto;
+  background-color: #ffffff;
+}
+/* line 843, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .new-grn-entry-table .item-name, #new_content .new-grn-entry-table .challan-qty, #new_content .new-grn-entry-table .accepted-qty {
+  min-width: 225px;
+  max-width: 225px;
+}
+/* line 848, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .new-grn-entry-table .uom {
+  min-width: 65px;
+  max-width: 65px;
+}
+/* line 853, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .new-grn-entry-table .tolerance-check-row {
+  height: 15px;
+}
+/* line 856, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .new-grn-entry-table .tolerance-check-row td {
+  border-top: 0px;
+}
+/* line 861, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+#new_content .new-grn-entry-table .tolerance-error {
+  font-size: 12px;
+  color: red;
+  padding-top: 0;
+  line-height: 0;
+  padding-bottom: 5px;
+  letter-spacing: 1px;
+  padding-left: 0;
+}
+
+/* line 872, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.create-grn-new {
+  border: none;
+}
+
+/* line 876, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.create-grn-label {
+  font-size: 14px;
+}
+
+/* line 880, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.remarks-char-rem {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.67;
+  letter-spacing: 0.2px;
+  color: #868e96;
+  position: absolute;
+  height: 15px;
+}
+
+/* line 890, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+.po-vendor-list {
+  margin-top: 70px;
+}
+
+@media (max-width: 768px) {
+  /* line 896, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+  #new_content .all-indent-form .pending-indents-action-btns {
+    display: block;
+    margin-top: 2px;
+    margin-bottom: 5px;
+  }
+  /* line 902, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+  #new_content .all-indent-form .pending-indents-bulk-action {
+    width: auto;
+    height: auto;
+    margin-right: 0;
+    letter-spacing: 0;
+    font-size: 12px;
+  }
+  /* line 910, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+  #new_content .all-indent-form .short-close-button {
+    padding: 2px 5px;
+  }
+  /* line 914, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+  #new_content .all-indent-form .item-header {
+    font-size: 20px;
+  }
+  /* line 919, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+  #new_content .all-indent-form .header .float-left {
+    padding-top: 18px;
+  }
+  /* line 924, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+  #new_content .all-indent-form .paginate {
+    margin-top: 3px;
+    margin-bottom: 3px;
+  }
+  /* line 929, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+  #new_content .all-indent-form .material-icons {
+    font-size: 16px;
+  }
+  /* line 933, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+  #new_content .all-indent-form .all-indents-page {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  /* line 938, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+  #new_content .all-indent-form .all-indents {
+    table-layout: fixed;
+    width: 100%;
+  }
+  /* line 942, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+  #new_content .all-indent-form .all-indents tbody tr {
+    height: 30px;
+  }
+  /* line 946, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+  #new_content .all-indent-form .all-indents td {
+    padding: 1px;
+    font-size: 12px;
+    word-break: break-all;
+  }
+  /* line 952, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+  #new_content .all-indent-form .all-indents th {
+    padding: 2px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #504d4d;
+    word-break: break-all;
+  }
+  /* line 960, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+  #new_content .all-indent-form .all-indents .check-box1 {
+    width: 6%;
+    padding-bottom: 50px;
+  }
+  /* line 965, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+  #new_content .all-indent-form .all-indents .company {
+    width: 10%;
+  }
+  /* line 969, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+  #new_content .all-indent-form .all-indents .item-name {
+    width: 18%;
+  }
+  /* line 973, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+  #new_content .all-indent-form .all-indents .indent-no {
+    width: 12%;
+  }
+  /* line 977, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+  #new_content .all-indent-form .all-indents .qty {
+    width: 14%;
+    padding-bottom: 50px;
+  }
+  /* line 982, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+  #new_content .all-indent-form .all-indents .indent-date {
+    width: 15%;
+  }
+  /* line 986, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+  #new_content .all-indent-form .all-indents .state {
+    width: 12%;
+  }
+  /* line 990, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+  #new_content .all-indent-form .all-indents .vendor-count {
+    width: 8%;
+    padding-bottom: 50px;
+  }
+  /* line 995, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+  #new_content .all-indent-form .all-indents .actions {
+    width: 5%;
+  }
+  /* line 1000, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+  #new_content .all-indent-form .all-indents .action .nav-link {
+    width: 15px;
+    -webkit-transform: rotate(-270deg);
+    -moz-transform: rotate(-270deg);
+    -ms-transform: rotate(-270deg);
+    -o-transform: rotate(-270deg);
+  }
+  /* line 1008, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+  #new_content .all-indent-form .all-indents .action .dropdown-menu {
+    top: 0 !important;
+    left: 0 !important;
+  }
+  /* line 1013, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+  #new_content .all-indent-form .all-indents .action .dropdown-menu-right {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    left: auto !important;
+    transform: translate3d(0, 0, 0) !important;
+  }
+  /* line 1022, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+  #new_content .all-indent-form .all-indents .indent-date-search, #new_content .all-indent-form .all-indents .status-search {
+    height: 35px;
+  }
+  /* line 1026, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+  #new_content .all-indent-form .all-indents .indent-slip-link {
+    color: #17a2b8;
+  }
+  /* line 1031, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+  #new_content .all-indent-form .drp-buttons {
+    text-align: center !important;
+  }
+  /* line 1034, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+  #new_content .all-indent-form .drp-buttons .drp-selected {
+    padding-right: 0 !important;
+    display: block !important;
+    text-align: center !important;
+    margin-bottom: 10px !important;
+  }
+  /* line 1042, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+  #new_content .all-indent-form .daterangepicker.opensright:before {
+    left: 80px !important;
+  }
+  /* line 1046, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+  #new_content .all-indent-form .daterangepicker.opensright:after {
+    left: 80px !important;
+  }
+
+  /* line 1052, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+  #clarification_modal .clarify-query {
+    width: 100%;
+  }
+  /* line 1056, /home/krishna/industryprime/app/assets/stylesheets/new_styles/pending_indents.scss */
+  #clarification_modal .modal-title {
+    font-size: 16px !important;
+  }
+}

@@ -1,7 +1,9 @@
 {
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.0",
+    "axios": "^0.20.0",
     "bootstrap": "^4.5.2",
+    "http-proxy-middleware": "^1.0.6",
     "jquery": "^3.5.1",
     "jquery.easing": "^1.4.1",
     "popper.js": "^1.16.1"

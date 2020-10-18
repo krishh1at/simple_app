@@ -27,13 +27,13 @@ import (
 type User struct {
 	ID            uint64 `gorm:"primaryKey"`
 	Name          string `json:"name"`
-	GivenName     string
-	FamilyName    string
-	Sub           string
+	GivenName     string `json:"givenName"`
+	FamilyName    string `json:"familyName"`
+	Sub           string `json:"sub"`
 	Profile       string `json:"profile"`
 	Picture       string `json:"picture"`
 	Email         string `gorm:"unique;not null;size:255"`
-	EmailVerified bool   `json:"email_verified"`
+	EmailVerified bool   `json:"emailVerified"`
 	Gender        string `json:"gender"`
 	Admin         bool   `json:"admin"`
 	CreatedAt     time.Time
