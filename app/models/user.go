@@ -32,7 +32,7 @@ type User struct {
 	Sub           string `json:"sub"`
 	Profile       string `json:"profile"`
 	Picture       string `json:"picture"`
-	Email         string `gorm:"unique;not null;size:255"`
+	Email         string `json:"email";gorm:"unique;not null;size:255"`
 	EmailVerified bool   `json:"emailVerified"`
 	Gender        string `json:"gender"`
 	Admin         bool   `json:"admin"`

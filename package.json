@@ -3,9 +3,15 @@
     "@fortawesome/fontawesome-free": "^5.15.0",
     "axios": "^0.20.0",
     "bootstrap": "^4.5.2",
+    "formik": "^2.2.1",
     "http-proxy-middleware": "^1.0.6",
     "jquery": "^3.5.1",
     "jquery.easing": "^1.4.1",
-    "popper.js": "^1.16.1"
+    "mobx": "^6.0.1",
+    "mobx-react": "^7.0.0",
+    "popper.js": "^1.16.1",
+    "react-bootstrap": "^1.4.0",
+    "react-router-dom": "^5.2.0",
+    "yup": "^0.29.3"
   }
 }

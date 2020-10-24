@@ -17,7 +17,7 @@ class User extends React.Component {
   }
 
   render() {
-    const { name, Email, email_verified, admin, picture } = this.state.user;
+    const { name, email, email_verified, admin, picture } = this.state.user;
     
     return(
       <div>
@@ -30,7 +30,7 @@ class User extends React.Component {
           <div className="email">
             <label className="text-dark font-weight-bold">Email:</label>
             <label className="mx-2">
-              { Email }
+              { email }
               {
                 email_verified ?
                 <FontAwesomeIcon icon={ faCheckCircle } className="text-success" /> :

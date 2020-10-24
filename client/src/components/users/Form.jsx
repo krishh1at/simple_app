@@ -1,21 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Modal, Button, FormControl } from 'react-bootstrap';
 
 const Form = (props) => {
-  const [show, setShow] = useState(false)
-  const handleClose = () => setShow(false)
-  const handleShow = () => setShow(true)
-  const { name, familyName, givenName, email, admin } = props.user;
+  const { ID, name, familyName, givenName, email, admin } = props.user;
+  const showModal = props.showModal;
+  const hideModal = props.hideModal;
 
   return (
     <div>
-      <Button variant="primary" onClick={ handleShow } className="float-right">Add New User</Button>
-
-      <Modal show={ show } onHide={ handleClose }>
+      <Modal show={ props.modal } onHide={ hideModal }>
         <form className="form" onSubmit={ props.onSubmitHandler }>
           <Modal.Header closeButton>
             {/* <img src={ picture } alt={ name }/> */}
-            <Modal.Title>{ props.title ? props.title : `Edit ${name}` }</Modal.Title>
+            <Modal.Title className="text-primary font-weight-bold">{ ID ? `${name}` : props.title }</Modal.Title>
           </Modal.Header>
           
           <Modal.Body>
@@ -58,7 +55,7 @@ const Form = (props) => {
                 type="checkbox"
                 name="admin"
                 id="admin"
-                value={ admin }
+                checked={ admin }
                 onChange={ props.onChangeHandler }
                 className="checkbox"
               />
@@ -66,8 +63,8 @@ const Form = (props) => {
           </Modal.Body>
           
           <Modal.Footer>
-            <Button variant="secondary" onClick={ handleClose }>Cancel</Button>
-            <Button type="submit" variant="primary" onClick={ handleClose }>{ props.title ? "Add" : "Update" }</Button>
+            <Button variant="secondary" onClick={ hideModal }>Cancel</Button>
+            <Button type="submit" variant="primary" onClick={ hideModal }>{ ID ? "Update" : "Add" }</Button>
           </Modal.Footer>
         </form>
       </Modal>
