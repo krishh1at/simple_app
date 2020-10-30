@@ -10,12 +10,12 @@ import "time"
 // Updated_at  time.Time `json:"updatedAt"`
 // User        belongs_to association
 type Post struct {
-	UserID    *uint64 `gorm:"not null"`
-	ID        uint64  `gorm:"primaryKey"`
-	Title     string
-	Body      string
-	CreatedAt time.Time
-	UpdatedAt time.Time
+	UserID    *uint64   `gorm:"not null"`
+	ID        uint64    `gorm:"primaryKey"`
+	Title     string    `json:"title"`
+	Body      string    `json:"body"`
+	CreatedAt time.Time `json:"created_at"`
+	UpdatedAt time.Time `json:"updated_at"`
 }
 
 // TableName this method return table name

@@ -25,6 +25,17 @@ func IndexPosts(c *gin.Context) {
 	}
 }
 
+// TrendingPosts for rendering all top posts
+func TrendingPosts(c *gin.Context) {
+	var posts []models.Post
+
+	if err := config.DB.Order("created_at desc").Find(&posts).Error; err != nil {
+		c.JSON(http.StatusBadRequest, err.Error())
+	} else {
+		c.JSON(http.StatusOK, posts)
+	}
+}
+
 // ShowPost is to find post of given id
 func ShowPost(c *gin.Context) {
 	post, err := findPost(c)

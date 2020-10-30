@@ -18,12 +18,12 @@ func InitRouter(router *gin.Engine) {
 	router.GET("/", controllers.HomeIndex)
 
 	// users routes
-	users := router.Group("/api")
-	users.GET("/users", api.IndexUsers)
-	users.GET("/users/:id", api.ShowUser)
-	users.POST("/users", api.CreateUser)
-	users.PUT("/users/:id", api.UpdateUser)
-	users.DELETE("/users/:id", api.DeleteUser)
+	users := router.Group("/api/users")
+	users.GET("/", api.IndexUsers)
+	users.GET("/:id", api.ShowUser)
+	users.POST("/", api.CreateUser)
+	users.PUT("/:id", api.UpdateUser)
+	users.DELETE("/:id", api.DeleteUser)
 
 	// posts routes
 	posts := router.Group("/api/user/:user_id/")
@@ -52,4 +52,5 @@ func InitRouter(router *gin.Engine) {
 	router.PUT("/users/:id", controllers.UpdateUser)
 	router.DELETE("/users/:id", controllers.DeleteUser)
 	router.DELETE("/logout", controllers.LogoutHandler)
+	router.GET("/api/trending_posts", api.TrendingPosts)
 }
